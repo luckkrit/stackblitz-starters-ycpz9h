@@ -1,0 +1,10 @@
+<ng-container *ngFor="let a of addressObservable | async">
+  <input type="checkbox" [(ngModel)]="editAddress" />
+  <input type="checkbox" [(ngModel)]="copyAddress" />
+  <app-address-form
+    [editAddress]="editAddress"
+    [copyAddress]="copyAddress"
+    [newAddress]="a.newAddress"
+    [oldAddress]="a.oldAddress"
+  ></app-address-form>
+</ng-container>
